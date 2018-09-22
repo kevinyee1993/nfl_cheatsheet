@@ -1,8 +1,12 @@
 module.exports = function(app, db) {
   const collection =
-  app.post('/notes', (req, res) => {
+  app.post('/stats', (req, res) => {
+
+    // need to change this
     const note = { text: req.body.body, title: req.body.title };
-    db.collection('notes').insert(note, (err, result) => {
+
+    // need to change the note in the parameter
+    db.collection('stats').insert(note, (err, result) => {
       if (err) {
         res.send({ 'error': 'An error has occurred' });
       } else {

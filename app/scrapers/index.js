@@ -11,7 +11,7 @@ function searchStats() {
 searchStats()
   .then(body => {
     const $ = cheerio.load(body);
-    $('tr').each(function(i, element) {
+    $('tr td:nth-child(2)').each(function(i, element) {
       const $element = $(element);
       console.log($element.text());
     });

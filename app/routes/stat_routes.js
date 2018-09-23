@@ -25,7 +25,8 @@ module.exports = function(app, db) {
     const stat = { name: req.body.name,
       rank: req.body.rank,
       position: req.body.position,
-      description: req.body.description };
+      description: req.body.description,
+      link: req.body.link };
     // const stat = { qbName: "brumbin", qbRank: "frumbin" };
 
     // need to change the note in the parameter

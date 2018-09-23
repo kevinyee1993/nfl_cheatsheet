@@ -38,11 +38,6 @@ function populateDatabase(url) {
             position: position,
             description: url[1],
             link: link
-
-
-            //TODO: get link to player profile too so user can click
-            // on it to get more info on the player
-
           })
           .then(response => console.log("posted"))
           .catch(error => console.log("error!"));

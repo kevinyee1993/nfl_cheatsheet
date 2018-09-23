@@ -9,24 +9,14 @@ const PASSING_STATS_URL = ['http://www.espn.com/nfl/statistics/player/_/stat/pas
 const TACKLE_STATS_URL = ['http://www.espn.com/nfl/statistics/player/_/stat/defense/sort/totalTackles/year/2018/seasontype/2', 'tackles'];
 const RUSHING_STATS_URL = ['http://www.espn.com/nfl/statistics/player/_/stat/rushing/sort/rushingYards/year/2018/seasontype/2', 'rushing yards'];
 const SACKS_STATS_URL = ['http://www.espn.com/nfl/statistics/player/_/stat/defense/sort/sacks/year/2018/seasontype/2', 'sacks'];
-
-
+const RECEIVING_STATS_URL = ['http://www.espn.com/nfl/statistics/player/_/stat/receiving/sort/receivingYards/year/2018/seasontype/2', 'receiving yards'];
+const INTERCEPTION_STATS_URL = ['http://www.espn.com/nfl/statistics/player/_/stat/defense/sort/interceptions/year/2018/seasontype/2', 'interceptions'];
 
 // pass in different urls here as arg to get the different stats
 function searchStats(url) {
   return fetch(url)
     .then(response => response.text());
 }
-
-// function postStats(name, rank) {
-//   axios.post('http://localhost:8000/stats', {
-//     name: name,
-//     rank: rank
-//   })
-//   .then(response => console.log("posted!"))
-//   .catch(error => console.log("error!"));
-// }
-
 
 function populateDatabase(url) {
   searchStats(url[0])
@@ -57,4 +47,4 @@ function populateDatabase(url) {
     });
 }
 
-populateDatabase(SACKS_STATS_URL);
+populateDatabase(INTERCEPTION_STATS_URL);

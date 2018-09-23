@@ -30,7 +30,7 @@ searchStats()
 
       if(player !== 'PLAYER') {
         count++;
-        await axios.post('http://localhost:8000/stats', {
+        await axios.post('http://localhost:8000/qbStats', {
           qbName: player,
           qbRank: count
         })

@@ -1,6 +1,21 @@
 module.exports = function(app, db) {
-  const collection =
-  app.post('/stats', (req, res) => {
+  // const collection =
+
+  app.get('/qbStats/:qbName', (req, res) => {
+
+    // let rank = parseInt(req.params.qbRank);
+    const details = { 'qbName': req.params.qbName };
+
+    db.collection('qbStats').findOne(details, (err, item) => {
+      if (err) {
+        res.send({'error':'An error has occurred'});
+      } else {
+        res.send(item);
+      }
+    });
+  });
+
+  app.post('/qbStats', (req, res) => {
 
     // need to change this
     // not getting exactly the req i expect

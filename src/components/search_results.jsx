@@ -34,15 +34,23 @@ class SearchResults extends Component {
 
   render() {
     console.log(this.state);
-    return(
-      <div>
-      <p>{ this.state.name }</p>
-      <p>{ this.state.rank }</p>
-      <p>{ this.state.position }</p>
-      <p>{ this.state.description }</p>
-      <p>{ this.state.link }</p>
-      </div>
-    );
+    if(this.props.searchName && !this.state.name) {
+      return(
+        <div>
+          This player was not found or is trash
+        </div>
+      );
+    } else {
+      return(
+        <div>
+        <p>{ this.state.name }</p>
+        <p>{ this.state.rank }</p>
+        <p>{ this.state.position }</p>
+        <p>{ this.state.description }</p>
+        <p>{ this.state.link }</p>
+        </div>
+      );
+    }
   }
 }
 

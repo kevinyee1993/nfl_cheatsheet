@@ -1,8 +1,11 @@
 module.exports = function(app, db) {
 
   app.get('/stats/:name', (req, res) => {
-
-    const details = { 'name': req.params.name };
+    let name = req.params.name.replace(/%20/g," ");
+    // const details = { 'name': req.params.name.replace(/ /g,"%20") };
+    // const details = { 'name': req.params.name };
+    // console.log(name);
+    const details = { 'name': name };
 
     db.collection('stats').findOne(details, (err, item) => {
       if (err) {

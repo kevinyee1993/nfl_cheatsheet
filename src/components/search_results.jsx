@@ -34,7 +34,15 @@ class SearchResults extends Component {
 
   render() {
     console.log(this.state);
-    return(<div>{ this.props.searchName }</div>);
+    return(
+      <div>
+      <p>{ this.state.name }</p>
+      <p>{ this.state.rank }</p>
+      <p>{ this.state.position }</p>
+      <p>{ this.state.description }</p>
+      <p>{ this.state.link }</p>
+      </div>
+    );
   }
 }
 

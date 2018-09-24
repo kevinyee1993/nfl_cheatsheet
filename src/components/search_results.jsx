@@ -8,15 +8,32 @@ import axios from 'axios';
 class SearchResults extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      name: null,
+      rank: null,
+      position: null,
+      description: null,
+      link: null
+    };
   }
 
-  componentDidUpdate() {
-    axios.get(`/stats/${ this.props.searchName.toLowerCase() }`)
-      .then( response => console.log(response.data) )
+  // async componentDidUpdate(prevState) {
+  async componentDidUpdate(prevState) {
+    // console.log(prevState.name === this.state.name);
+    if(!this.state.name || (prevState.searchName &&
+      this.state.name &&
+      prevState.searchName.toLowerCase() !== this.props.searchName.toLowerCase() )) {
+      await axios.get(`/stats/${ this.props.searchName.toLowerCase() }`)
+      .then( response => this.setState(response.data) )
       .catch( error => console.log(error));
+    } else {
+      return;
+    }
   }
 
   render() {
+    console.log(this.state);
     return(<div>{ this.props.searchName }</div>);
   }
 }

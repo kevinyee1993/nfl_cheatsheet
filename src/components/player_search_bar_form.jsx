@@ -10,6 +10,7 @@ let PlayerSearchBarForm = props => {
         <Field name="name" component="input" type="text" />
       </div>
 
+      <button type="submit">Go</button>
     </form>
   );
 };

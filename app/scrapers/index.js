@@ -28,7 +28,7 @@ function populateDatabase(url) {
 
         let link = $element.contents()['0'].attribs.href;
         let position = text.substr(text.indexOf(",") + 1);
-        let player = text.replace(/,[^,]+$/, "");
+        let player = text.replace(/,[^,]+$/, "").toLowerCase();
 
         if(player !== player.toUpperCase()) {
           count++;

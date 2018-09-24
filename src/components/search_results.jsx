@@ -11,8 +11,8 @@ class SearchResults extends Component {
   }
 
   componentDidUpdate() {
-    axios.get(`/stats/${ this.props.searchName }`)
-      .then( response => console.log(response) )
+    axios.get(`/stats/${ this.props.searchName.toLowerCase() }`)
+      .then( response => console.log(response.data) )
       .catch( error => console.log(error));
   }
 

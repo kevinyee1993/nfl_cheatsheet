@@ -7,29 +7,12 @@ class SearchResults extends Component {
   }
 
   render() {
-    if(this.props.playerSearched) {
-      if(this.props.playerSearched.values){
-        return(
-          <div>
-            { this.props.playerSearched.values.name }
-          </div>
-        );
-      } else {
-        return <div></div>;
-      }
-    }
-
-    else {
-      return (
-        <div>what the heck</div>
-      );
-    }
-
+    return(<div>{ this.props.searchName }</div>);
   }
 }
 
 function mapStateToProps(state) {
-  return { playerSearched: state.form.PlayerSearchBar };
+  return { searchName: state.searchName.values.name };
 }
 
 export default connect(mapStateToProps)(SearchResults);

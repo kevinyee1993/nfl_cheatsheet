@@ -43,11 +43,11 @@ class SearchResults extends Component {
     } else {
       return(
         <div>
-        <p>{ this.state.name }</p>
-        <p>{ this.state.rank }</p>
-        <p>{ this.state.position }</p>
-        <p>{ this.state.description }</p>
-        <p>{ this.state.link }</p>
+        <p>Name: { this.state.name }</p>
+        <p>Rank: { this.state.rank }</p>
+        <p>Position: { this.state.position }</p>
+        <p>Description: { this.state.description }</p>
+        <p>Link: <a href={ this.state.link }>{ this.state.link }</a></p>
         </div>
       );
     }

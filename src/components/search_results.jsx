@@ -12,7 +12,8 @@ class SearchResults extends Component {
       rank: null,
       position: null,
       description: null,
-      link: null
+      link: null,
+      image: null
     };
   }
 
@@ -42,6 +43,7 @@ class SearchResults extends Component {
     } else {
       return(
         <div>
+        <img src={ this.state.image }/>
         <p>Name: { this.state.name }</p>
         <p>Rank: { this.state.rank }</p>
         <p>Position: { this.state.position }</p>

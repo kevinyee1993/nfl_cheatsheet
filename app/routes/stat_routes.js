@@ -16,6 +16,18 @@ module.exports = function(app, db) {
     });
   });
 
+  app.get('/stats', async (req,res) => {
+    // let results = db.collection('stats').find();
+    const statsArr = [];
+    let arr = await db.collection('stats').find().toArray();
+
+    console.log(arr);
+
+    // console.log(results);
+    // res.send(results);
+  });
+
+
   // FIX THIS LATER
   app.put('/stats/:name', (req,res) => {
     // const id = req.params.id;

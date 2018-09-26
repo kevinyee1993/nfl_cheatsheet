@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import axios from 'axios';
-// might not be able to do standard axios request here,
-// looks like need to do a CORS request or something
 
 class SearchResults extends Component {
   constructor(props) {
@@ -25,7 +23,9 @@ class SearchResults extends Component {
       this.state.name &&
       prevState.searchName.toLowerCase() !== this.props.searchName.toLowerCase() )) {
       await axios.get(`/stats/${ this.props.searchName.toLowerCase() }`)
-      .then( response => this.setState(response.data) )
+      .then( response => {
+        this.setState(response.data);
+      })
       .catch( error => console.log(error));
     } else {
       return;
@@ -33,7 +33,6 @@ class SearchResults extends Component {
   }
 
   render() {
-    console.log(this.state);
     if(this.props.searchName && !this.state.name) {
       return(
         <div>

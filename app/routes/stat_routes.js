@@ -17,27 +17,16 @@ module.exports = function(app, db) {
   });
 
   app.get('/stats', async (req,res) => {
-    // let results = db.collection('stats').find();
     const statsArr = [];
     let arr = await db.collection('stats').find().toArray();
-
-    console.log(arr);
-
-    // console.log(results);
-    // res.send(results);
+    res.send(arr);
   });
 
 
-  // FIX THIS LATER
   app.put('/stats/:name', (req,res) => {
-    // const id = req.params.id;
     const details = { 'name': req.params.name };
 
     const image = { image: req.body.image };
-
-    // db.foo.update({},{$set : { "about.bio" : ""}} , true, true);
-
-    // db.collection('stats').update(details, image, (err, result) => {
     db.collection('stats').update(details, {$set : image}, (err, result) => {
       if (err) {
           res.send({'error':'An error has occurred'});

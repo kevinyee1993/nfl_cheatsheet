@@ -72,13 +72,13 @@ class SearchResults extends Component {
           break;
       }
 
-      let analysis = `${ this.state.name } is a ${ playerAdj } ${ this.state.position }.
+      let analysis = `${ capitalizeName(this.state.name) } is a ${ playerAdj } ${ this.state.position }.
       He will get you ${ statsAdj } ${ this.state.description }.`
 
       return(
         <div>
         <img src={ this.state.image }/>
-        <p>Name: { this.state.name }</p>
+        <p>Name: { capitalizeName(this.state.name) }</p>
         <p>{ analysis }</p>
         <p>Rank: { this.state.rank }</p>
         <p>Position: { this.state.position }</p>
@@ -88,6 +88,18 @@ class SearchResults extends Component {
       );
     }
   }
+}
+
+function capitalizeName(name) {
+  if(!name) {
+    return null;
+  }
+
+  let split = name.split(" ");
+  let firstName = split[0].slice(0,1).toUpperCase() + split[0].slice(1, split[0].length + 1);
+  let lastName = split[1].slice(0,1).toUpperCase() + split[1].slice(1, split[1].length + 1);
+
+  return firstName + " " + lastName;
 }
 
 function mapStateToProps(state) {

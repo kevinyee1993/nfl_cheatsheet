@@ -45,3 +45,137 @@ body {
   /* border: 1px solid red; */
   margin-top: 2vw;
 }
+
+.desc-child {
+  background-color: #EDEEF0;
+  /* opacity: 70%; */
+}
+
+/* team color classes */
+.ari {
+  background-color: #8B2E40;
+}
+
+.atl {
+  background-color: #9A2934;
+}
+
+.bal {
+  background-color: #201B6E;
+}
+
+.buf {
+  background-color: #B62936;
+}
+
+.car {
+  background-color: #3684C4;
+}
+
+.chi {
+  background-color: #0D1629;
+}
+
+.cin {
+  background-color: #E95C2F;
+}
+
+.cle {
+  background-color: #EC4E27;
+}
+
+.dal {
+  background-color: #091E40;
+}
+
+.den {
+  background-color: #082242;
+}
+
+.det {
+  background-color: #2F75B1;
+}
+
+.gb {
+  background-color: #253631;
+}
+
+.hou {
+  background-color: #0A202E;
+}
+
+.ind {
+  background-color: #0B2C5C;
+}
+
+.jax {
+  background-color: #296676;
+}
+
+.kc {
+  background-color: #D1343E;
+}
+
+.lac {
+  background-color: #0A2B5B;
+}
+
+.lar {
+  background-color: #082242;
+}
+
+.mia {
+  background-color: #3C8C95;
+}
+
+.min {
+  background-color: #4C3069;
+}
+
+.ne {
+  background-color: #082242;
+}
+
+.no {
+  background-color: #D0BC93;
+}
+
+.nyg {
+  background-color: #0E2361;
+}
+
+.nyj {
+  background-color: #173E2E;
+}
+
+.oak {
+  background-color: #A6ACAF;
+}
+
+.phi {
+  background-color: #1D4B53;
+}
+
+.pit {
+  background-color: #F5B843;
+}
+
+.sf {
+  background-color: #9C1E14;
+}
+
+.sea {
+  background-color: #082242;
+}
+
+.tb {
+  background-color: #C42B20;
+}
+
+.ten {
+  background-color: #5794CC;
+}
+
+.wsh {
+  background-color: #6F3541;
+}

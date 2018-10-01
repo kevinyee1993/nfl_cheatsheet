@@ -41,12 +41,12 @@ class SearchResults extends Component {
 
   showStats() {
     return(
-    <div className='player-information'>
+    <div className='player-information desc-child'>
       <div className='player-image'>
         <img src={ this.state.image }/>
       </div>
 
-      <div className='player-information-text'>
+      <div className='player-information-text desc-child'>
         <p>Name: { capitalizeName(this.state.name) }</p>
         <p>Position: { this.state.position }</p>
         <p>Find out more about <a href={ this.state.link }>{ capitalizeName(this.state.name) }</a></p>
@@ -63,7 +63,6 @@ class SearchResults extends Component {
         </div>
       );
     } else {
-      console.log(this.state.team);
       let playerAdj;
       let statsAdj;
 
@@ -96,9 +95,11 @@ class SearchResults extends Component {
       He will get you ${ statsAdj } ${ this.state.description }.`
 
       if(this.state.name) {
+        // console.log(this.state.team);
+        let test = 'player-desc-and-info';
         return (
-          <div className='player-desc-and-info'>
-            <p className='player-analysis'>{ analysis }</p>
+          <div className={ 'player-desc-and-info ' + this.state.team }>
+            <p className='player-analysis desc-child'>{ analysis }</p>
             { this.showStats() }
           </div>
         );

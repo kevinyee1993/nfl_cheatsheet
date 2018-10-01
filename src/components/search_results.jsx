@@ -95,7 +95,7 @@ class SearchResults extends Component {
 
       if(this.state.name) {
         return (
-          <div>
+          <div className='player-desc-and-info'>
             <p>{ analysis }</p>
             { this.showStats() }
           </div>

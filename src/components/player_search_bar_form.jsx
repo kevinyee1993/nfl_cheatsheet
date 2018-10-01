@@ -8,9 +8,9 @@ let PlayerSearchBarForm = props => {
       <div>
         <label htmlFor="name">Enter player name:  </label>
         <Field name="name" component="input" type="text" />
+        <button type="submit" className='btn-primary'>Go</button>
       </div>
 
-      <button type="submit">Go</button>
     </form>
   );
 };

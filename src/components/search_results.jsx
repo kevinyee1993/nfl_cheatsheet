@@ -16,7 +16,8 @@ class SearchResults extends Component {
       position: null,
       description: null,
       link: null,
-      image: null
+      image: null,
+      team: null
     };
 
     this.showStats = this.showStats.bind(this);
@@ -62,7 +63,7 @@ class SearchResults extends Component {
         </div>
       );
     } else {
-
+      console.log(this.state.team);
       let playerAdj;
       let statsAdj;
 

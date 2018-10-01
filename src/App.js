@@ -8,8 +8,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PlayerSearchBar />
-        <SearchResults />
+        <div className='search-bar-and-results'>
+          <PlayerSearchBar />
+          <SearchResults />
+        </div>
       </div>
     );
   }

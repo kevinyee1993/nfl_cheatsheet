@@ -49,8 +49,8 @@ function populateDatabase(url) {
 }
 
 populateDatabase(PASSING_STATS_URL);
-// populateDatabase(TACKLE_STATS_URL);
-// populateDatabase(RUSHING_STATS_URL);
-// populateDatabase(SACKS_STATS_URL);
-// populateDatabase(RECEIVING_STATS_URL);
-// populateDatabase(INTERCEPTION_STATS_URL);
+populateDatabase(TACKLE_STATS_URL);
+populateDatabase(RUSHING_STATS_URL);
+populateDatabase(SACKS_STATS_URL);
+populateDatabase(RECEIVING_STATS_URL);
+populateDatabase(INTERCEPTION_STATS_URL);

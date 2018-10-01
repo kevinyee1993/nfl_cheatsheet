@@ -84,7 +84,8 @@ class SearchResults extends Component {
           playerAdj = 'booboo';
           statsAdj = 'barely any';
           break;
-        case(this.state.rank < 40):
+        // case(this.state.rank < 40):
+        default:
           playerAdj = 'trash';
           statsAdj = 'no';
           break;
@@ -96,7 +97,7 @@ class SearchResults extends Component {
       if(this.state.name) {
         return (
           <div className='player-desc-and-info'>
-            <p>{ analysis }</p>
+            <p className='player-analysis'>{ analysis }</p>
             { this.showStats() }
           </div>
         );

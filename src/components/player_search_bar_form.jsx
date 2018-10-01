@@ -6,7 +6,7 @@ let PlayerSearchBarForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Enter player name:  </label>
+        <label htmlFor="name" className='form-label'>Enter player name:</label>
         <Field name="name" component="input" type="text" />
         <button type="submit" className='btn-primary'>Go</button>
       </div>

@@ -18,6 +18,8 @@ class SearchResults extends Component {
       link: null,
       image: null
     };
+
+    this.showStats = this.showStats.bind(this);
   }
 
   // async componentDidUpdate(prevState) {
@@ -34,6 +36,22 @@ class SearchResults extends Component {
     } else {
       return;
     }
+  }
+
+  showStats() {
+    return(
+    <div className='player-information'>
+      <div className='player-image'>
+        <img src={ this.state.image }/>
+      </div>
+
+      <div className='player-information-text'>
+        <p>Name: { capitalizeName(this.state.name) }</p>
+        <p>Position: { this.state.position }</p>
+        <p>Find out more about <a href={ this.state.link }>{ capitalizeName(this.state.name) }</a></p>
+      </div>
+    </div>
+    );
   }
 
   render() {
@@ -75,17 +93,20 @@ class SearchResults extends Component {
       let analysis = `${ capitalizeName(this.state.name) } is a ${ playerAdj } ${ this.state.position }.
       He will get you ${ statsAdj } ${ this.state.description }.`
 
-      return(
-        <div>
-        <img src={ this.state.image }/>
-        <p>Name: { capitalizeName(this.state.name) }</p>
-        <p>{ analysis }</p>
-        <p>Rank: { this.state.rank }</p>
-        <p>Position: { this.state.position }</p>
-        <p>Description: { this.state.description }</p>
-        <p>Link: <a href={ this.state.link }>{ this.state.link }</a></p>
-        </div>
-      );
+      if(this.state.name) {
+        return (
+          <div>
+            <p>{ analysis }</p>
+            { this.showStats() }
+          </div>
+        );
+      } else {
+        return(
+          <div>
+            Enter a player's name!
+          </div>
+        );
+      }
     }
   }
 }

@@ -28,9 +28,14 @@ async function updateDatabaseWithImage() {
           const $ = cheerio.load(body);
 
           let img = $('.main-headshot img')[0].attribs.src;
+          let team = $('.last')[0].children[0].attribs.href.match(/name\/(.*)\//)[1];
 
-          axios.put(`http://localhost:8000/stats/${ el.name }`, { image: img } )
-              .then(success => console.log(img))
+          // let player = text.replace(/,[^,]+$/, "").toLowerCase();
+
+          // console.log(team);
+          axios.put(`http://localhost:8000/stats/${ el.name }`, { image: img, team: team } )
+          // axios.put(`http://localhost:8000/stats/${ el.name }`, { team: team } )
+              .then(success => console.log(team))
               .catch(error => console.log(error) );
           })
         .catch(error => console.log(error));

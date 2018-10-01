@@ -26,7 +26,7 @@ module.exports = function(app, db) {
   app.put('/stats/:name', (req,res) => {
     const details = { 'name': req.params.name };
 
-    const image = { image: req.body.image };
+    const image = { image: req.body.image, team: req.body.team };
     db.collection('stats').update(details, {$set : image}, (err, result) => {
       if (err) {
           res.send({'error':'An error has occurred'});

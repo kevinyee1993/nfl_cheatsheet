@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: lightpink;
+  background-color: #EDEEF0;
 }
 
 .player-information {
@@ -13,10 +13,10 @@ body {
   border: 1px solid black;
 }
 
-.player-image img {
+/* .player-image img {
   height: 200px;
   width: 200px;
-}
+} */
 
 .player-information-text {
   border: 1px solid black;
@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
 }
 
 .player-analysis {
@@ -41,6 +42,6 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-top: 2vw;
 }

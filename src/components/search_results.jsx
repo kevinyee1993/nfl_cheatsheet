@@ -104,7 +104,6 @@ class SearchResults extends Component {
       } else {
         return(
           <div>
-            Enter a player's name!
           </div>
         );
       }

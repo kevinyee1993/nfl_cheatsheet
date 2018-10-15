@@ -28,7 +28,7 @@ class SearchResults extends Component {
 
   async componentDidMount() {
     await axios.get('/stats')
-      .then( players => console.log(players.data))
+      .then( players => this.props.loadPlayers(players.data))
   }
 
   // async componentDidUpdate(prevState) {
@@ -145,4 +145,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ loadPlayers: loadPlayers }, dispatch);
 }
 
-export default connect(mapStateToProps)(SearchResults);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);

@@ -7,13 +7,13 @@ import { bindActionCreators } from 'redux';
 import { valueSubmitted } from '../actions/index';
 
 class PlayerSearchBar extends Component {
+
   constructor(props) {
     super(props);
     this.submit = this.submit.bind(this);
   }
 
   submit(values) {
-    // console.log(values);
     this.props.valueSubmitted(values);
   }
 

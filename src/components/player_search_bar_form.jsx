@@ -14,23 +14,33 @@ class PlayerSearchBarForm extends Component {
     let selector = formValueSelector('PlayerSearchBar');
     const value = selector(this.props.state, 'name');
 
-
     return (
       <form onSubmit={ this.handleSubmit }>
         <div className='search-bar'>
           <label htmlFor="name" className='form-label'>Enter player name:</label>
-          <Field name="name" component="input" type="text" />
+          <Field name="name" component="input" type="text" autoComplete="off" list="datalist"/>
           <button type="submit" className='btn-primary'>Go</button>
         </div>
 
-        <div className='suggestions'>
-
-        </div>
+        { typeAhead(value, this.props.allPlayers) }
 
       </form>
     );
   }
-};
+}
+
+function typeAhead(input, allPlayers) {
+  if(!input) {
+    return <div></div>;
+  } else {
+    return(
+      <datalist id="datalist">
+        <option value="fart"></option>
+
+      </datalist>
+    );
+  }
+}
 
 function mapStateToProps(state) {
   return {

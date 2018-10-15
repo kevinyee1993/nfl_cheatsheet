@@ -33,7 +33,11 @@ class SearchResults extends Component {
       .then( response => {
         this.setState(response.data);
       })
-      .catch( error => console.log(error));
+      // .catch( error => console.log(error));
+      .catch( error => this.setState({
+          name: null
+        }
+      ));
     } else {
       return;
     }

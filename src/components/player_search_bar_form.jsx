@@ -37,7 +37,9 @@ function typeAhead(input, allPlayers) {
       <datalist id="datalist">
         {
           allPlayers.map(player => {
-            return (<option value={ player.name }></option>);
+            if(input === player.name.slice(0, input.length)) {
+              return (<option value={ player.name }></option>);
+            }
           })
         }
 

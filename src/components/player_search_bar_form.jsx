@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { formValueSelector } from 'redux-form';
 
 // let PlayerSearchBarForm = props => {
 class PlayerSearchBarForm extends Component {
@@ -10,6 +11,10 @@ class PlayerSearchBarForm extends Component {
   }
 
   render() {
+    let selector = formValueSelector('PlayerSearchBar');
+    const value = selector(this.props.state, 'name');
+
+
     return (
       <form onSubmit={ this.handleSubmit }>
         <div className='search-bar'>
@@ -27,13 +32,14 @@ class PlayerSearchBarForm extends Component {
   }
 };
 
-function mapDispatchToProps(state) {
+function mapStateToProps(state) {
   return {
-    allPlayers: state.allPlayers
+    allPlayers: state.allPlayers,
+    state: state
   };
 }
 
-let searchBarFormContainer = connect(mapDispatchToProps)(PlayerSearchBarForm);
+let searchBarFormContainer = connect(mapStateToProps)(PlayerSearchBarForm);
 
 export default reduxForm({
   // a unique name for the form

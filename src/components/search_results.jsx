@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { loadPlayers } from '../actions/index';
 
 import axios from 'axios';
 
@@ -23,6 +26,11 @@ class SearchResults extends Component {
     this.showStats = this.showStats.bind(this);
   }
 
+  async componentDidMount() {
+    await axios.get('/stats')
+      .then( players => console.log(players.data))
+  }
+
   // async componentDidUpdate(prevState) {
   async componentDidUpdate(prevState) {
     // console.log(prevState.name === this.state.name);
@@ -33,7 +41,6 @@ class SearchResults extends Component {
       .then( response => {
         this.setState(response.data);
       })
-      // .catch( error => console.log(error));
       .catch( error => this.setState({
           name: null
         }
@@ -42,6 +49,7 @@ class SearchResults extends Component {
       return;
     }
   }
+
 
   showStats() {
     return(
@@ -131,6 +139,10 @@ function capitalizeName(name) {
 
 function mapStateToProps(state) {
   return { searchName: state.searchName.values.name };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ loadPlayers: loadPlayers }, dispatch);
 }
 
 export default connect(mapStateToProps)(SearchResults);

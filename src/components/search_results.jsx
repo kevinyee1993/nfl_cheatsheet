@@ -8,33 +8,33 @@ import axios from 'axios';
 
 // update this with all positions
 const POSITIONS = {
-  ' QB': 'quarterback',
-  ' RB': 'running back',
-  ' FB': 'full back',
-  ' WR': 'wide receiver',
-  ' TE': 'tight end',
-  ' OL': 'offensive lineman',
-  ' C': 'center',
-  ' G': 'guard',
-  ' LG': 'left guard',
-  ' RG': 'right guard',
-  ' T': 'tackle',
-  ' LT': 'left tackle',
-  ' RT': 'right tackle',
-  ' K': 'kicker',
-  ' KR': 'kick returner',
-  ' DL': 'defensive lineman',
-  ' DE': 'defensive end',
-  ' DT': 'defensive tackle',
-  ' NT': 'nose tackle',
-  ' LB': 'linebacker',
-  ' DB': 'defensive back',
-  ' CB': 'corner back',
-  ' FS': 'free safety',
-  ' SS': 'strong safety',
-  ' S': 'safety',
-  ' P': 'punter',
-  ' PR': 'punt returner'
+  ' QB': 'Quarterback',
+  ' RB': 'Running back',
+  ' FB': 'Full back',
+  ' WR': 'Wide receiver',
+  ' TE': 'Tight end',
+  ' OL': 'Offensive lineman',
+  ' C': 'Center',
+  ' G': 'Guard',
+  ' LG': 'Left guard',
+  ' RG': 'Right guard',
+  ' T': 'Tackle',
+  ' LT': 'Left tackle',
+  ' RT': 'Right tackle',
+  ' K': 'Kicker',
+  ' KR': 'Kick returner',
+  ' DL': 'Defensive lineman',
+  ' DE': 'Defensive end',
+  ' DT': 'Defensive tackle',
+  ' NT': 'Nose tackle',
+  ' LB': 'Linebacker',
+  ' DB': 'Defensive back',
+  ' CB': 'Corner back',
+  ' FS': 'Free safety',
+  ' SS': 'Strong safety',
+  ' S': 'Safety',
+  ' P': 'Punter',
+  ' PR': 'Punt returner'
   };
 
 const TEAMS = {
@@ -123,8 +123,8 @@ class SearchResults extends Component {
 
       <div className='player-information-text desc-child'>
         <p>Position: { POSITIONS[this.state.position] }</p>
-        <p>Team: { this.state.team }</p>
-        <p>Find out more about <a href={ this.state.link }>{ capitalizeName(this.state.name) }</a></p>
+        <p>Team: { TEAMS[this.state.team] }</p>
+        <p>Find out more about <a href={ this.state.link } target="_blank">{ capitalizeName(this.state.name) }</a></p>
       </div>
     </div>
     );

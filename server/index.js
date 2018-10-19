@@ -22,7 +22,17 @@ MongoClient.connect(db, { useNewUrlParser: true }, (err, client) => {
     console.log('We are live on ' + PORT);
   });
 
+  // Answer API requests.
+  app.get('/api', function (req, res) {
+    res.set('Content-Type', 'application/json');
+    res.send('{"message":"Hello from the custom server!"}');
+  });
+
   app.get('/stats/:name', (req, res) => {
+    res.set('Content-Type', 'application/json');
+
+    var db = client.db('nfl_cheatsheet');
+
     let name = req.params.name.replace(/%20/g," ");
     // const details = { 'name': req.params.name.replace(/ /g,"%20") };
     // const details = { 'name': req.params.name };
@@ -39,6 +49,9 @@ MongoClient.connect(db, { useNewUrlParser: true }, (err, client) => {
   });
 
   app.get('/stats', async (req,res) => {
+    res.set('Content-Type', 'application/json');
+    var db = client.db('nfl_cheatsheet');
+
     const statsArr = [];
     let arr = await db.collection('stats').find().toArray();
     res.send(arr);
@@ -46,6 +59,9 @@ MongoClient.connect(db, { useNewUrlParser: true }, (err, client) => {
 
 
   app.put('/stats/:name', (req,res) => {
+    res.set('Content-Type', 'application/json');
+    var db = client.db('nfl_cheatsheet');
+
     const details = { 'name': req.params.name };
 
     const image = { image: req.body.image, team: req.body.team };
@@ -59,6 +75,8 @@ MongoClient.connect(db, { useNewUrlParser: true }, (err, client) => {
   });
 
   app.post('/stats', (req, res) => {
+    res.set('Content-Type', 'application/json');
+    var db = client.db('nfl_cheatsheet');
 
     const stat = { name: req.body.name,
       rank: req.body.rank,
@@ -76,11 +94,7 @@ MongoClient.connect(db, { useNewUrlParser: true }, (err, client) => {
     });
   });
 
-  // Answer API requests.
-  app.get('/api', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    res.send('{"message":"Hello from the custom server!"}');
-  });
+
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {

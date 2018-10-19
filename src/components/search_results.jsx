@@ -8,34 +8,69 @@ import axios from 'axios';
 
 // update this with all positions
 const POSITIONS = {
-  'QB': 'quarterback',
-  'RB': 'running back',
-  'FB': 'full back',
-  'WR': 'wide receiver',
-  'TE': 'tight end',
-  'OL': 'offensive lineman',
-  'C': 'center',
-  'G': 'guard',
-  'LG': 'left guard',
-  'RG': 'right guard',
-  'T': 'tackle',
-  'LT': 'left tackle',
-  'RT': 'right tackle',
-  'K': 'kicker',
-  'KR': 'kick returner',
-  'DL': 'defensive lineman',
-  'DE': 'defensive end',
-  'DT': 'defensive tackle',
-  'NT': 'nose tackle',
-  'LB': 'linebacker',
-  'DB': 'defensive back',
-  'CB': 'corner back',
-  'FS': 'free safety',
-  'SS': 'strong safety',
-  'S': 'safety',
-  'P': 'punter',
-  'PR': 'punt returner'
+  ' QB': 'quarterback',
+  ' RB': 'running back',
+  ' FB': 'full back',
+  ' WR': 'wide receiver',
+  ' TE': 'tight end',
+  ' OL': 'offensive lineman',
+  ' C': 'center',
+  ' G': 'guard',
+  ' LG': 'left guard',
+  ' RG': 'right guard',
+  ' T': 'tackle',
+  ' LT': 'left tackle',
+  ' RT': 'right tackle',
+  ' K': 'kicker',
+  ' KR': 'kick returner',
+  ' DL': 'defensive lineman',
+  ' DE': 'defensive end',
+  ' DT': 'defensive tackle',
+  ' NT': 'nose tackle',
+  ' LB': 'linebacker',
+  ' DB': 'defensive back',
+  ' CB': 'corner back',
+  ' FS': 'free safety',
+  ' SS': 'strong safety',
+  ' S': 'safety',
+  ' P': 'punter',
+  ' PR': 'punt returner'
   };
+
+const TEAMS = {
+  'ari': 'Arizona Cardinals',
+  'atl': 'Atlanta Falcons',
+  'bal': 'Baltimore Ravens',
+  'buf': 'Buffalo Bills',
+  'car': 'Carolina Panthers',
+  'chi': 'Chicago Bears',
+  'cin': 'Cincinnati Bengals',
+  'cle': 'Cleveland Browns',
+  'dal': 'Dallas Cowboys',
+  'den': 'Denver Broncos',
+  'det': 'Detroit Lions',
+  'gb': 'Green Bay Packers',
+  'hou': 'Houston Texans',
+  'ind': 'Indianapolis Colts',
+  'jax': 'Jacksonville Jaguars',
+  'kc': 'Kansas City Chiefs',
+  'lac': 'Los Angeles Chargers',
+  'lar': 'Los Angeles Rams',
+  'mia': 'Miami Dolphins',
+  'min': 'Minnesota Vikings',
+  'ne': 'New England Patriots',
+  'no': 'New Orleans Saints',
+  'nyg': 'New York Giants',
+  'nyj': 'New York Jets',
+  'oak': 'Oakland Raiders',
+  'phi': 'Philadelphia Eagles',
+  'pit': 'Pittsburgh Steelers',
+  'sea': 'Seattle Seahawks',
+  'sf': 'San Francisco 49ers',
+  'tb': 'Tamba Bay Buccaneers',
+  'ten': 'Tennesee Titans',
+  'was': 'Washington Redskins'
+}
 
 class SearchResults extends Component {
   constructor(props) {
@@ -87,7 +122,7 @@ class SearchResults extends Component {
       </div>
 
       <div className='player-information-text desc-child'>
-        <p>Position: { this.state.position }</p>
+        <p>Position: { POSITIONS[this.state.position] }</p>
         <p>Team: { this.state.team }</p>
         <p>Find out more about <a href={ this.state.link }>{ capitalizeName(this.state.name) }</a></p>
       </div>

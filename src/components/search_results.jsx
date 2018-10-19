@@ -7,7 +7,35 @@ import { loadPlayers } from '../actions/index';
 import axios from 'axios';
 
 // update this with all positions
-const POSITIONS = { 'QB': 'quarterback' };
+const POSITIONS = {
+  'QB': 'quarterback',
+  'RB': 'running back',
+  'FB': 'full back',
+  'WR': 'wide receiver',
+  'TE': 'tight end',
+  'OL': 'offensive lineman',
+  'C': 'center',
+  'G': 'guard',
+  'LG': 'left guard',
+  'RG': 'right guard',
+  'T': 'tackle',
+  'LT': 'left tackle',
+  'RT': 'right tackle',
+  'K': 'kicker',
+  'KR': 'kick returner',
+  'DL': 'defensive lineman',
+  'DE': 'defensive end',
+  'DT': 'defensive tackle',
+  'NT': 'nose tackle',
+  'LB': 'linebacker',
+  'DB': 'defensive back',
+  'CB': 'corner back',
+  'FS': 'free safety',
+  'SS': 'strong safety',
+  'S': 'safety',
+  'P': 'punter',
+  'PR': 'punt returner'
+  };
 
 class SearchResults extends Component {
   constructor(props) {
@@ -59,8 +87,8 @@ class SearchResults extends Component {
       </div>
 
       <div className='player-information-text desc-child'>
-        <p>Name: { capitalizeName(this.state.name) }</p>
         <p>Position: { this.state.position }</p>
+        <p>Team: { this.state.team }</p>
         <p>Find out more about <a href={ this.state.link }>{ capitalizeName(this.state.name) }</a></p>
       </div>
     </div>
@@ -104,7 +132,7 @@ class SearchResults extends Component {
       }
 
       let analysis = `${ capitalizeName(this.state.name) } is a ${ playerAdj } ${ this.state.position }.
-      He will get you ${ statsAdj } ${ this.state.description }.`
+      He will get you ${ statsAdj } ${ this.state.description } this season.`
 
       if(this.state.name) {
         // console.log(this.state.team);
